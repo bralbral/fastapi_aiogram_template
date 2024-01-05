@@ -1,0 +1,5 @@
+bot:
+  token: 1234567890:XXXXXXXXXXXXXXXXXXXXXXXXXX
+  telegram_bot_api_url: http://tg_local_api:8081
+  webhook_url: http://bot:9999/webhook
+  webhook_workers: 4

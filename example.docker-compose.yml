@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+  tg_local_api:
+    container_name: telegram_local
+    restart: always
+    image: ghcr.io/lukaszraczylo/tdlib-telegram-bot-api-docker/telegram-api-server:api-6.7.1
+    volumes:
+      - ./data/bot_api/temp_dir:/var/lib/telegram-bot-api/temp
+      - ./data/bot_api/dir:/var/lib/telegram-bot-api/main
+      - ./data/bot_api/logs:/var/lib/telegram-bot-api/logs
+      - /etc/timezone:/etc/timezone
+    command:
+      --http-port 8081
+      --http-stat-port 8082
+      --local
+      --dir /var/lib/telegram-bot-api/main
+      --temp-dir /var/lib/telegram-bot-api/temp
+      --log /var/lib/telegram-bot-api/logs/api.log
+      --log-max-file-size 104857600
+      --verbosity 3
+    environment:
+      TELEGRAM_API_ID: ${TELEGRAM_API_ID}
+      TELEGRAM_API_HASH: ${TELEGRAM_API_HASH}
+    env_file:
+      - .env
+
+  bot:
+    container_name: fastapi_aiogram_template_bot
+    image: fastapi_aiogram_temlate_bot:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./config.yaml:/app/config.yaml
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
+    command: bash -c "python3 -m src"
+    extra_hosts:
+      - "bot:0.0.0.0"
