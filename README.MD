@@ -1,4 +1,4 @@
-# telegram-feedback-bot
+# fastapi_aiogram_template
 
 Simple [aiogram](https://github.com/aiogram/aiogram) webhook template based on [fastapi](https://github.com/tiangolo/fastapi).
 
