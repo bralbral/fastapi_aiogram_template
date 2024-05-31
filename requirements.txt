@@ -1,5 +1,5 @@
 fastapi==0.111.0
-uvicorn==0.29.0
+uvicorn==0.30.0
 aiogram==3.6.0
 PyYAML==6.0.1
 pydantic==2.7.1
