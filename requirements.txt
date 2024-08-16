@@ -6,4 +6,4 @@ pydantic==2.8.2
 uvloop==0.19.0; sys_platform == 'linux'
 click==8.1.7
 orjson==3.10.6
-structlog==24.4.0n
+structlog==24.4.0
