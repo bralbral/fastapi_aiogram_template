@@ -3,7 +3,7 @@ uvicorn==0.32.0
 aiogram==3.13.1
 PyYAML==6.0.2
 pydantic==2.9.2
-uvloop==0.20.0; sys_platform == 'linux'
+uvloop==0.21.0; sys_platform == 'linux'
 click==8.1.7
 orjson==3.10.7
 structlog==24.4.0
