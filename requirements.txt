@@ -1,4 +1,4 @@
-fastapi==0.115.8
+fastapi==0.115.11
 uvicorn==0.34.0
 aiogram==3.18.0
 PyYAML==6.0.2
