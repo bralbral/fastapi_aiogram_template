@@ -5,5 +5,5 @@ PyYAML==6.0.2
 pydantic==2.12.3
 uvloop==0.22.1; sys_platform == 'linux'
 click==8.1.8
-orjson==3.11.4
+orjson==3.11.5
 structlog==25.4.0
