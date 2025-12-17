@@ -2,7 +2,7 @@ fastapi==0.119.0
 uvicorn==0.38.0
 aiogram==3.22.0
 PyYAML==6.0.2
-pydantic==2.12.3
+pydantic==2.12.5
 uvloop==0.22.1; sys_platform == 'linux'
 click==8.1.8
 orjson==3.11.4
