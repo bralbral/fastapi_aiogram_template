@@ -1,9 +1,9 @@
-fastapi==0.119.0
-uvicorn==0.38.0
-aiogram==3.22.0
-PyYAML==6.0.2
+fastapi==0.131.0
+uvicorn==0.41.0
+aiogram==3.26.0
+PyYAML==6.0.3
 pydantic==2.12.5
 uvloop==0.22.1; sys_platform == 'linux'
-click==8.1.8
-orjson==3.11.4
+click==8.3.1
+orjson==3.11.7
 structlog==25.5.0
