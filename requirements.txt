@@ -4,6 +4,6 @@ aiogram==3.28.2
 PyYAML==6.0.3
 pydantic==2.13.4
 uvloop==0.22.1; sys_platform == 'linux'
-click==8.4.1
+click==8.4.2
 orjson==3.11.9
 structlog==26.1.0
