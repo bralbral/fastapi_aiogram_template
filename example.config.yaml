@@ -2,4 +2,9 @@ bot:
   token: 1234567890:XXXXXXXXXXXXXXXXXXXXXXXXXX
   telegram_bot_api_url: http://tg_local_api:8081
   webhook_url: http://bot:9999/webhook
-  webhook_workers: 4
+  webhook_listen_host: 0.0.0.0
+  webhook_listen_port: 9999
+  # Keep one process while using the built-in memory FSM storage.
+  webhook_workers: 1
+  # Enable only for an intentional reset of queued updates.
+  drop_pending_updates: false

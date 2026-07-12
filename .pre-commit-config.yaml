@@ -1,48 +1,29 @@
 repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.21
+    hooks:
+      - id: ruff
+        args: [--fix, --exit-non-zero-on-fix]
+      - id: ruff-format
+
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.3.0
+    rev: v2.2.0
     hooks:
       - id: mypy
-        exclude: venv
-        args: [--python-version=3.11, --ignore-missing-imports,  --install-types, --non-interactive,]
+        additional_dependencies: [types-aiofiles, types-requests]
+        args: [--ignore-missing-imports, --explicit-package-bases]
 
-
-  - repo: local
+  - repo: https://github.com/pycqa/isort
+    rev: 9.0.0a3
     hooks:
-      # For reformatting code
-      - id: black
-        name: black
-        entry: black
-        language: python
-        types: [ python ]
-        args: [ --line-length=88, --target-version=py311 ]
+      - id: isort
+        args: ["--profile", "black"]
 
-      # For upgrade python code syntax for newer versions of the language
-      - id: pyupgrade
-        name: pyupgrade
-        entry: pyupgrade
-        language: python
-        types: [ python ]
-
-      # Tool for automatically reordering python imports
-      - id: reorder-python-imports
-        name: reorder-python-imports
-        entry: reorder-python-imports
-        language: python
-        types: [ python ]
-
-       # Removes unused imports and unused variables from Python code
-      - id: autoflake
-        name: autoflake
-        entry: autoflake
-        language: python
-        types: [ python ]
-        args: [ --in-place, --remove-all-unused-imports, --remove-duplicate-keys ]
-
-        # sort __all__ statements
-      - id: sort-all
-        name: Sort __all__ records
-        description: Automatically Sort __all__ records alphabetically.
-        entry: sort-all
-        language: python
-        types: [ python ]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-added-large-files
+      - id: debug-statements

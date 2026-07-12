@@ -4,13 +4,18 @@ Simple [aiogram](https://github.com/aiogram/aiogram) webhook template based on [
 
 ## Run
 
-> Tested on Ubuntu 22.04, Python 3.11, Docker version 24.0.5
+> Tested on Ubuntu 24.04, Python 3.12, Docker version 28.5.0
 
 1. Rename **example.config.yaml** to **config.yaml**, **example.env** to **.env**, **example.docker-compose.yml** to **docker-compose.yml**
 
 2. Fill **TELEGRAM_API_ID** and **TELEGRAM_API_HASH** in **.env** file. Use [this](https://core.telegram.org/api/obtaining_api_id) for obtain values.
 
 3. Fill **token** in **config.yaml**. Use [BotFather](https://t.me/BotFather) for obtain it.
+
+   Keep `webhook_workers: 1` while the template uses in-memory FSM storage.
+   `webhook_url` is the URL registered in Telegram, while
+   `webhook_listen_host` and `webhook_listen_port` are the address bound by
+   Uvicorn.
 
 4. `docker-compose up -d` or if you have new docker `docker compose up -d`
 
@@ -31,4 +36,4 @@ For development, you should install the requirements from [requirements_dev.txt]
 
 `pip install -r requirements_dev.txt`
 
-Use [pre-commit.sh](./pre-commit.sh) before commit.
+Use `pre-commit run --all-files` before commit.

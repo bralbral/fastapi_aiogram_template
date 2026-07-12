@@ -17,7 +17,7 @@ def setup_logging():
             structlog.processors.add_log_level,
             structlog.processors.format_exc_info,
             structlog.processors.TimeStamper(
-                fmt="%Y-%m-%d %H:%M:%S UTC", utc=False, key="@timestamp"
+                fmt="%Y-%m-%d %H:%M:%S UTC", utc=True, key="@timestamp"
             ),
             structlog.processors.JSONRenderer(serializer=orjson.dumps),
         ],

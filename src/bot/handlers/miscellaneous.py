@@ -1,6 +1,4 @@
-from aiogram import Bot
-from aiogram import Router
-from aiogram import types
+from aiogram import Bot, Router, types
 from aiogram.filters import StateFilter
 from aiogram.fsm.state import default_state
 

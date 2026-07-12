@@ -1,10 +1,8 @@
-version: '3.7'
-
 services:
   tg_local_api:
     container_name: telegram_local
     restart: always
-    image: ghcr.io/lukaszraczylo/tdlib-telegram-bot-api-docker/telegram-api-server:api-6.7.1
+    image: ghcr.io/lukaszraczylo/tdlib-telegram-bot-api-docker/telegram-api-server:1.0.312
     volumes:
       - ./data/bot_api/temp_dir:/var/lib/telegram-bot-api/temp
       - ./data/bot_api/dir:/var/lib/telegram-bot-api/main
@@ -35,6 +33,4 @@ services:
       - ./config.yaml:/app/config.yaml
       - /etc/timezone:/etc/timezone
       - /etc/localtime:/etc/localtime
-    command: bash -c "python3 -m src"
-    extra_hosts:
-      - "bot:0.0.0.0"
+    command: ["python3", "-m", "src"]

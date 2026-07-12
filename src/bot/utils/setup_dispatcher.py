@@ -1,6 +1,5 @@
 from aiogram import Dispatcher
-from aiogram.fsm.storage.memory import MemoryStorage
-from aiogram.fsm.storage.memory import SimpleEventIsolation
+from aiogram.fsm.storage.memory import MemoryStorage, SimpleEventIsolation
 
 from src.bot.handlers import register_handlers
 from src.config import Config

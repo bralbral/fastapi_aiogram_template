@@ -15,8 +15,10 @@ async def setup_bot(config: Config) -> Bot:
         session=AiohttpSession(api=api_server),
     )
 
-    await bot.delete_webhook(drop_pending_updates=True)
-    await bot.set_webhook(f"{config.bot.webhook_url}")
+    await bot.delete_webhook(
+        drop_pending_updates=config.bot.drop_pending_updates,
+    )
+    await bot.set_webhook(config.bot.webhook_url)
 
     return bot
 

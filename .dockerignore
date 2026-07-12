@@ -143,6 +143,16 @@ pythonenv*
 .dmypy.json
 dmypy.json
 
+# ruff
+.ruff_cache/
+
+.git/
+.github/
+.agents/
+.codex/
+data/
+
+
 # Pyre type checker
 .pyre/
 
@@ -163,3 +173,4 @@ Thumbs.db #thumbnail cache on Windows
 temp*
 key
 .env
+/data

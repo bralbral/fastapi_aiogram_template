@@ -1,7 +1,6 @@
 from typing import Any
 
-from aiogram import Bot
-from aiogram import Dispatcher
+from aiogram import Bot, Dispatcher
 from fastapi import FastAPI
 
 from src.config import Config
