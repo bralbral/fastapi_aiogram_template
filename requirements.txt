@@ -1,6 +1,6 @@
 fastapi==0.139.2
 uvicorn==0.51.0
-aiogram==3.29.1
+aiogram==3.30.0
 PyYAML==6.0.3
 pydantic==2.13.4
 uvloop==0.22.1; sys_platform == 'linux'
